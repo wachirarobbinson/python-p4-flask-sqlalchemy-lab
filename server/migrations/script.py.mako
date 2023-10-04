@@ -17,7 +17,8 @@ depends_on = ${repr(depends_on)}
 
 
 def upgrade():
-    ${upgrades if upgrades else "pass"}
+    op.add_column('enclosures', sa.Column('environment', sa.String(length=255), nullable=True))
+
 
 
 def downgrade():
